@@ -1,7 +1,25 @@
-<h2><%= todo_list.title %></h2>
+<div class="card-header d-flex justify-content-between">
+  <h3><b><%= todo_list.title %></b></h3>
+  <p class="text-secondary mt-1">100% Comlete (All items done)</p>
+</div>
 
-<ul>
-  <% todo_list.todo_items.each do |todo_item| %>
-    <li><%= todo_item.description %></li>
-  <% end %>
-</ul>
+<div class="card-body">
+  <div class="progress mb-4">
+    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+
+  <ul class="list-group">
+    <% todo_list.todo_items.each do |todo_item| %>
+      <li class="list-group-item">
+        <div class="d-flex justify-content-between">
+          <span>
+            <%= todo_item.description %>
+          </span>
+          <%= link_to '#', class: 'btn btn-success' do %>
+            <i class="fas fa-check"></i>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
