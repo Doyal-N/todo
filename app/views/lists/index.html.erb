@@ -1,0 +1,11 @@
+<div class="card-header d-flex justify-content-center">
+  My Todo Lists
+</div>
+
+<ul class="list-group">
+  <% @lists.each do |list| %>
+    <li class="list-group-item">
+      <%= link_to list.title, list %>
+    </li>
+  <% end %>
+</ul>

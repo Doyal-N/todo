@@ -1,5 +1,5 @@
 <div class="card-header d-flex justify-content-between">
-  <h3><b><%= todo_list.title %></b></h3>
+  <h3><b><%= list.title %></b></h3>
   <p class="text-secondary mt-1">100% Comlete (All items done)</p>
 </div>
 
@@ -9,11 +9,11 @@
   </div>
 
   <ul class="list-group">
-    <% todo_list.todo_items.each do |todo_item| %>
+    <% list.items.each do |todo_item| %>
       <li class="list-group-item">
         <div class="d-flex justify-content-between">
           <span>
-            <%= todo_item.description %>
+            <%= item.description %>
           </span>
           <%= link_to '#', class: 'btn btn-success' do %>
             <i class="fas fa-check"></i>

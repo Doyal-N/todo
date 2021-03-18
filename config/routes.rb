@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :todo_lists, shallow: true do
-    resources :todo_items, except: %i[index show]
+  root 'lists#index'
+
+  resources :lists, shallow: true do
+    resources :items, except: %i[index show]
   end
 end
