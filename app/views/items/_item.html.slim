@@ -1,0 +1,12 @@
+-list.items.each do |item|
+  .card.my-3
+    .list-group-item
+      .d-flex.justify-content-between
+        span= item.description
+
+        -if item.completed?
+          .btn.btn-info
+            i.far.fa-thumbs-up
+        -else
+          .btn.btn-info
+            i.far.fa-thumbs-down
