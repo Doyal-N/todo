@@ -3,10 +3,8 @@
     .list-group-item
       .d-flex.justify-content-between
         span= item.description
-
-        -if item.completed?
-          .btn.btn-info
+        = link_to item, class: 'btn btn-info', data: { reflex: 'click->ItemReflex#toggle', id: item.id }
+          -if item.completed?
             i.far.fa-thumbs-up
-        -else
-          .btn.btn-info
+          -else
             i.far.fa-thumbs-down

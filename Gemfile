@@ -16,6 +16,8 @@ gem 'pg'
 gem 'sass-rails', '>= 6'
 gem "slim-rails"
 gem 'webpacker', '~> 5.0'
+gem 'font-awesome-sass', '~> 5.13'
+gem "stimulus_reflex", "~> 3.4"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -49,9 +51,3 @@ group :test do
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-# for adding font-awesome icons
-gem 'font-awesome-sass', '~> 5.13'
