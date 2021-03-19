@@ -1,0 +1,14 @@
+<% list.items.each do |item| %>
+
+  <div class="card my-3">
+    <div class="list-group-item">
+      <div class="d-flex justify-content-between">
+        <span><%= item.description %></span>
+        <%= button_tag(class: "btn btn-info") do %>
+          <i class="far fa-thumbs-down"></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+<% end %>

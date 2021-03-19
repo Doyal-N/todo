@@ -1,0 +1,14 @@
+<div class="card my-1 mx-4">
+  <div class="list-group-item">
+
+    <div class="d-flex justify-content-between">
+      <h5><%= link_to list.title, list, class: 'text-decoration-none text-dark' %></h5>
+      <p class="text-secondary mt-1"><%= list.decorate.percent_done %>% Comlete</p>
+    </div>
+
+    <div class="progress" style="height: 7px;">
+      <div class="progress-bar w-<%= list.decorate.percent_done %>" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+  </div>
+</div>

@@ -1,11 +1,7 @@
-<div class="card-header d-flex justify-content-center">
-  My Todo Lists
-</div>
+<h1 class="text-center">My lists</h1>
 
-<ul class="list-group">
-  <% @lists.each do |list| %>
-    <li class="list-group-item">
-      <%= link_to list.title, list %>
-    </li>
-  <% end %>
-</ul>
+<%= render @lists %>
+
+<div class="d-flex justify-content-center my-3">
+  <%= link_to 'Create new List', new_list_path, class: 'btn btn-primary btn-lg' %>
+</div>

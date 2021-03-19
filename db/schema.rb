@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2021_03_18_081919) do
   enable_extension "plpgsql"
 
   create_table "items", force: :cascade do |t|
-    t.text "description"
-    t.boolean "completed"
+    t.text "description", null: false
+    t.boolean "completed", default: false
     t.datetime "completed_at"
     t.bigint "list_id", null: false
     t.datetime "created_at", precision: 6, null: false
