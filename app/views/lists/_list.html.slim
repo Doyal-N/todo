@@ -2,6 +2,9 @@
   .list-group-item
     .d-flex.justify-content-between
       h5= link_to list.title, list, class: 'text-decoration-none text-dark'
-      p.text-secondary.mt-1= "#{list.decorate.percent_done}% Completed"
+      .row.mr-1
+        p.text-success.mt-1.mr-2= "#{list.decorate.percent_done}% done"
+        button.btn.btn-danger.mb-2 data-reflex='click->list#delete' data-id="#{list.id}"
+          i.fas.fa-trash
     .progress style=("height: 7px;")
       .progress-bar aria-valuemax="100" aria-valuemin="0" class=("w-#{list.decorate.percent_done}") role="progressbar"
