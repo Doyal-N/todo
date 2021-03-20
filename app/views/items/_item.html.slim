@@ -2,9 +2,11 @@
   .card.my-3
     .list-group-item
       .d-flex.justify-content-between
-        span= item.description
-        = link_to item, class: 'btn btn-info', data: { reflex: 'click->ItemReflex#toggle', id: item.id }
-          -if item.completed?
-            i.far.fa-thumbs-up
-          -else
-            i.far.fa-thumbs-down
+        -if item.completed?
+          span.text-info.bg-dark= item.description
+          = link_to item, class: 'btn btn-info', data: { reflex: 'click->Item#toggle', id: item.id }
+            i.fas.fa-thumbs-up
+        -else
+          span= item.description
+          = link_to item, class: 'btn btn-info', data: { reflex: 'click->Item#toggle', id: item.id }
+            i.fas.fa-thumbs-down

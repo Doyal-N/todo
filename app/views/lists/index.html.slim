@@ -1,4 +1,4 @@
 h1.text-center My lists
 = render @lists
-.d-flex.justify-content-center.my-3
-  =link_to 'Create new List', new_list_path, class: 'btn btn-primary btn-lg'
+.d-flex.justify-content-between.my-3
+  = render 'lists/form'
