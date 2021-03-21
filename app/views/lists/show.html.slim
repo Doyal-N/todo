@@ -1,5 +1,8 @@
-= link_to lists_path, class: 'btn btn-dark'
-  i.fas.fa-arrow-left
+.d-flex.justify-content-between
+  = link_to lists_path, class: 'btn btn-dark'
+    i.fas.fa-arrow-left
+  .btn.btn-dark
+    i.fas.fa-sort
 .card.mt-2
   = render 'items/form'
 .list-group

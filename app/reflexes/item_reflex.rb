@@ -8,7 +8,7 @@ class ItemReflex < ApplicationReflex
     Item.find(element.dataset[:id]).delete
   end
 
-  def create(description, date)
+  def create(description, date = nil)
     list = List.find(element.dataset[:list])
     list.items.create(description: description, completed_at: date)
   end
