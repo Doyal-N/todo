@@ -1,5 +1,7 @@
 = link_to lists_path, class: 'btn btn-dark'
   i.fas.fa-arrow-left
+.card.mt-2
+  = render 'items/form'
 .list-group
   .list-group-item
-    = render 'items/item'
+    = render 'items/item', collection: list.items

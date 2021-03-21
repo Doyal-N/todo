@@ -3,10 +3,16 @@
     .list-group-item
       .d-flex.justify-content-between
         -if item.completed?
-          span.text-info.bg-dark= item.description
-          = link_to item, class: 'btn btn-info', data: { reflex: 'click->Item#toggle', id: item.id }
-            i.fas.fa-thumbs-up
+          p.text-info.bg-dark= item.description
+          .row
+            = button_to item, class: 'btn btn-info mr-2', data: { reflex: 'click->Item#toggle', id: item.id }
+              i.fas.fa-thumbs-up
+            button.btn.btn-danger.mb-2 data-reflex='click->item#delete' data-id="#{item.id}"
+              i.fas.fa-trash
         -else
-          span= item.description
-          = link_to item, class: 'btn btn-info', data: { reflex: 'click->Item#toggle', id: item.id }
-            i.fas.fa-thumbs-down
+          p= item.description
+          .row
+            = button_to item, class: 'btn btn-info mr-2', data: { reflex: 'click->Item#toggle', id: item.id }
+              i.fas.fa-thumbs-down
+            button.btn.btn-danger.mb-2 data-reflex='click->item#delete' data-id="#{item.id}"
+              i.fas.fa-trash
