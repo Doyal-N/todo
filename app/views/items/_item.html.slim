@@ -7,6 +7,9 @@
             a.badge
               i.fas.fa-business-time
             p.text-info.bg-dark= item.description
+            -unless item.completed_at.nil?
+              span.ml-1
+                .badge.rounded-pill.bg-info.text-dark= item.decorate.formatted_date
           .row
             = button_to item, class: 'btn btn-info mr-2', data: { reflex: 'click->Item#toggle', id: item.id }
               i.fas.fa-thumbs-up
@@ -14,9 +17,12 @@
               i.fas.fa-trash
         -else
           .row
-            a.badge
+            span.badge
               i.fas.fa-business-time
             p= item.description
+            -unless item.completed_at.nil?
+              span.ml-1
+                .badge.rounded-pill.bg-info.text-dark= item.decorate.formatted_date
           .row
             = button_to item, class: 'btn btn-info mr-2', data: { reflex: 'click->Item#toggle', id: item.id }
               i.fas.fa-thumbs-down

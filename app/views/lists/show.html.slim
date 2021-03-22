@@ -1,8 +1,8 @@
 .d-flex.justify-content-between
   = link_to lists_path, class: 'btn btn-dark'
     i.fas.fa-arrow-left
-  .btn.btn-dark
-    i.fas.fa-sort
+  a.btn.btn-dark data-reflex='click->item#delete_done' data-list="#{list.id}"
+    i.fas.fa-broom
 .card.mt-2
   = render 'items/form'
 .list-group

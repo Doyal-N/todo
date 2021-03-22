@@ -12,4 +12,9 @@ class ItemReflex < ApplicationReflex
     list = List.find(element.dataset[:list])
     list.items.create(description: description, completed_at: date)
   end
+
+  def delete_done
+    list = List.find(element.dataset[:list])
+    list.items.destroy_all
+  end
 end
