@@ -11,4 +11,18 @@ export default class extends ApplicationController  {
     desc.value = ''
     date.value = ''
   }
+
+  show_form(e) {
+    let item_id = e.target.dataset.item
+    let form = document.querySelector(`.form-${item_id}`)
+
+    if(e.target.matches('.btn')) {
+      if(form.classList.contains('d-none')) {
+        form.classList.remove('d-none')
+      } else {
+        form.classList.add('d-none')
+      }
+    }
+  }
+
 }

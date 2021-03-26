@@ -6,5 +6,5 @@
 .card.mt-2
   = render 'items/form'
 .list-group
-  .list-group-item
-    = render 'items/item', collection: list.items
+  .list-group-item data-controller='item'
+    = render 'items/item'
