@@ -1,5 +1,5 @@
 form.input-group.d-none class="form-#{item.id}"
-  textarea.form-control data-item-target='notice'
-  input.form-control type='text'
-  input.form-control type='date'
-  button.btn.btn-primary.form-control Edit
+  textarea.form-control data-item-target='note'
+  input.form-control type='text' data-item-target='desc'
+  input.form-control type='date' data-item-target='date'
+  button.btn.btn-primary data-action='item#update' data-item="#{item.id}" Edit
