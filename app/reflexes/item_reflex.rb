@@ -8,9 +8,9 @@ class ItemReflex < ApplicationReflex
     Item.find(element.dataset[:id]).delete
   end
 
-  def create(description, date = nil)
+  def create(description, deadline = nil)
     list = List.find(element.dataset[:list])
-    list.items.create(description: description, completed_at: date)
+    list.items.create(description: description, completed_at: deadline)
   end
 
   def delete_done
@@ -18,8 +18,8 @@ class ItemReflex < ApplicationReflex
     list.items.destroy_all
   end
 
-  def update(item_id, desc, date = nil, note = nil)
-    item = Item.find(item_id)
-    item.update(notice: note, description: desc, completed_at: date)
+  def update(id, content, term)
+    item = Item.find(id)
+    item.update(description: content, completed_at: term)
   end
 end

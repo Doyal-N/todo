@@ -1,16 +1,16 @@
 import ApplicationController from './application_controller'
 
 export default class extends ApplicationController  {
-  static targets = [ 'description', 'date' ]
-  static targets = [ 'note', 'desc', 'date' ]
+  static targets = [ 'description', 'deadline' ]
 
   add_item(e) {
     e.preventDefault()
-    let desc = this.descriptionTarget
-    let date = this.dateTarget
-    this.stimulate('Item#create', desc.value, date.value)
+    let desc = this.descriptionTarget,
+        deadline = this.deadlineTarget;
+
+    this.stimulate('Item#create', desc.value, deadline.value)
     desc.value = ''
-    date.value = ''
+    deadline.value = ''
   }
 
   toggle(e) {
@@ -28,15 +28,13 @@ export default class extends ApplicationController  {
 
   update(e) {
     e.preventDefault()
-    let note = this.noteTarget,
-    desc = this.descTarget,
-    date = this.dateTarget,
-    item_id = e.target.dataset.item
 
-    this.stimulate('ItemReflex#update', item_id, desc.value, note.value, date.value)
-    note.value = ''
-    desc.value = ''
-    date.value = ''
+    let desc = e.path[1][0],
+        date = e.path[1][1],
+        id = e.target.dataset.item;
+
+    this.stimulate('Item#update', id, desc.value, date.value)
+
   }
 
 }

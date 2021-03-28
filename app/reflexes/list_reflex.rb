@@ -5,6 +5,6 @@ class ListReflex < ApplicationReflex
 
   def delete
     list = List.find(element.dataset[:id])
-    list.delete
+    list.destroy
   end
 end

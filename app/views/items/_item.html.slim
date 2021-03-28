@@ -13,7 +13,7 @@
           .row
             = button_to item, class: 'btn btn-info mr-2', data: { reflex: 'click->Item#toggle', id: item.id }
               i.fas.fa-thumbs-up
-            button.btn.btn-secondary.mr-2.mb-2 data-action='item#toggle' data-item="#{item.id}"
+            button.btn.btn-secondary.mr-2.mb-2 data-action='click->item#toggle' data-item="#{item.id}"
               i.fas.fa-pencil-alt
             button.btn.btn-danger.mb-2 data-reflex='click->item#delete' data-id="#{item.id}"
               i.fas.fa-trash
@@ -28,8 +28,8 @@
           .row
             = button_to item, class: 'btn btn-info mr-2', data: { reflex: 'click->Item#toggle', id: item.id }
               i.fas.fa-thumbs-down
-            button.btn.btn-secondary.mr-2.mb-2 data-action='item#toggle' data-item="#{item.id}"
+            button.btn.btn-secondary.mr-2.mb-2 data-action='click->item#toggle' data-item="#{item.id}"
               i.fas.fa-pencil-alt
             button.btn.btn-danger.mb-2 data-reflex='click->item#delete' data-id="#{item.id}"
               i.fas.fa-trash
-  =render 'items/inline_form', item: item
+      = render 'items/inline_form', item: item
