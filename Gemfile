@@ -15,8 +15,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'pg'
 gem 'sass-rails', '>= 6'
 gem "slim-rails"
+gem "view_component", require: "view_component/engine"
 gem 'webpacker', '~> 5.0'
-gem 'font-awesome-sass', '~> 5.13'
 gem "stimulus_reflex", "~> 3.4"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
